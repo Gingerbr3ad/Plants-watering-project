@@ -1,0 +1,9 @@
+#include <Arduino.h>
+
+#define WATER_SENSOR_ACTIVE_PIN 32
+#define WATER_SENSOR_PASSIVE_PIN 35
+#define ALARM_PIN 22
+
+#define MOISTURE_SENSOR_PIN 36
+#define PUMP_PIN 23
+

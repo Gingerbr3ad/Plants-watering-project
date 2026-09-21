@@ -1,25 +1,24 @@
-#include "systemDefinitions.h"
-#include "waterSensor.h"
+#include "system_definitions.h"
+#include "water_sensor.h"
 
-int val = 0;
-extern volatile bool waterSensorCheckFlag = 0;
+int moisture_value = 0;
+volatile bool waterSensorCheckFlag;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(pumpPin, OUTPUT);
-  pinMode(alarmPin, OUTPUT);
+  pinMode(PUMP_PIN, OUTPUT);
 
-  waterSensorInit();
+  water_sensor_init();
 }
 
 void loop() {
-  if (waterSensorCheckFlag) {waterSensorCheck();}
-  val = analogRead(sensorPin);
-  Serial.println(val);
+  if (waterSensorCheckFlag) {water_sensor_check(); }
+  moisture_value = analogRead(MOISTURE_SENSOR_PIN);
+  Serial.println(moisture_value);
 
-  if(val > 2000){
-    digitalWrite(pumpPin, HIGH); }
-  else {digitalWrite(pumpPin, LOW);}
+  if(moisture_value > 2000){
+    digitalWrite(PUMP_PIN, HIGH); }
+  else {digitalWrite(PUMP_PIN, LOW); }
   
 
   delay(500);
