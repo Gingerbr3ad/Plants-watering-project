@@ -1,3 +1,6 @@
+Plants watering project created for the TTK4225 NTNU course laboratories
+# Readme from original repo
+
 # Plants-watering-system
 An automatic plants watering system.
 
